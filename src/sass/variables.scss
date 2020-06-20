@@ -1,0 +1,25 @@
+$screen-min: 320px;
+$screen-min-s: 374px;
+$screen-xxs: 450px;
+$screen-xs: 768px;
+$screen-sm: 968px;
+$screen-md: 1200px;
+$screen-lg: 1440px;
+
+$screen-album: 550px;
+$screen-album-big: 650px;
+
+$retina: (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi);
+$phones: only screen and (max-width: #{$screen-xxs});
+$phones-xs:only screen and (max-width: #{$screen-min-s});
+$tablets: only screen and (max-width: #{$screen-xs});
+$tablets-big: only screen and (max-width: #{$screen-sm});
+$desktop: only screen and (max-width: #{$screen-md});
+$full-hd: only screen and (max-width: #{$screen-lg});
+
+$album: only screen and (max-height: #{$screen-album});
+$album-big: only screen and (max-height: #{$screen-album-big});
+
+$titles-color: #2D3339;
+$main-text-color: #6C6F75;
+$main-font-family: 'Mukta Vaani', sans-serif;
