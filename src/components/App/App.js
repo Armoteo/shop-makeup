@@ -1,8 +1,6 @@
 import React from 'react';
-import './App.module.scss';
 import { Switch, Route } from 'react-router';
 import { routes } from './Routes'
-import { Link } from 'react-router-dom';
 
 function App() {
 
@@ -26,11 +24,7 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/admin">ADMIN</Link>
-      </div>
+    <div>
       {renderPage()}
     </div>
   );

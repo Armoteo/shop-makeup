@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import AdminPageView from './AdminPageView'
 import Layout from '../../Layout/Layout'

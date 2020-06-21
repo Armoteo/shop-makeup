@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Geneva Normal';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Geneva-Normal.ttf'); /* IE9 Compat Modes */
+  src: local('Geneva Normal'), local('GenevaNormal'),
+       url('../assets/fonts/Geneva-Normal.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/Geneva-Normal.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Geneva Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Geneva-Regular.ttf'); /* IE9 Compat Modes */
+  src: local('Geneva Regular'), local('GenevaRegular'),
+       url('../assets/fonts/Geneva-Regular.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/Geneva-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Telegrafico';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/telegrafico.ttf'); /* IE9 Compat Modes */
+  src: local('Telegrafico'), local('Telegrafico'),
+       url('../assets/fonts/telegrafico.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/telegrafico.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'ChelseaMarket-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/ChelseaMarket-Regular.ttf'); /* IE9 Compat Modes */
+  src: local('ChelseaMarket-Regular'), local('ChelseaMarket-Regular'),
+       url('../assets/fonts/ChelseaMarket-Regular.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/ChelseaMarket-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
