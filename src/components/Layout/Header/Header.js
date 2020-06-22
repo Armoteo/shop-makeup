@@ -28,6 +28,11 @@ class Header extends React.Component {
           url: '/tablets'
         },
         {
+          key: 'software',
+          name: 'Software',
+          url: '/software'
+        },
+        {
           key: 'contact',
           name: 'Contact',
           url: '/contact'

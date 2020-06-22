@@ -37,3 +37,13 @@
        url('../assets/fonts/ChelseaMarket-Regular.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('../assets/fonts/ChelseaMarket-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
 }
+
+@font-face {
+  font-family: 'Terminal Dosis-Book';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Terminal Dosis-Book.ttf'); /* IE9 Compat Modes */
+  src: local('Terminal Dosis-Book'), local('TerminalDosis-Book'),
+       url('../assets/fonts/Terminal Dosis-Book.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/Terminal Dosis-Book.ttf') format('truetype'), /* Safari, Android, iOS */
+}

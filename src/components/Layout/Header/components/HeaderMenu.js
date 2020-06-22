@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import styles from '../../../../sass/components/elements/HeaderMenu.module.scss'
 import flame from '../../../../assets/images/flame.png'
@@ -16,10 +17,10 @@ const HeaderMenu = ({ menuHeader }) => {
         <div className={styles.menu}>
           {menuHeader.map((item, index) => {
             if (item.name === 'buy') {
-              return <a
-                href={item.url}
+              return <Link
+                to={item.url}
                 key={index}
-              >{item.name}<i className="fas fa-shopping-cart"></i></a>
+              >{item.name}<i className="fas fa-shopping-cart"></i></Link>
             } else {
               return <a href={item.url} key={index}>{item.name}</a>
             }

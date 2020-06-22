@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  background-image: url('../../../assets/images/bg.png');
+  background-size: cover;
+}
+
+.wrapperContent {
+  @include wrapper();
+  justify-content: space-evenly;
+}
