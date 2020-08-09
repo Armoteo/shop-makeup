@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: rgba(96, 96, 96, 0.4);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+.form {
+  width: 335px;
+  height: 440px;
+  background: #FFFFFF;
+  box-shadow: 50px 50px 101px rgba(0, 0, 0, 0.0759);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  top: 5%;
+}

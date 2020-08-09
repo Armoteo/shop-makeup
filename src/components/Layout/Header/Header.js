@@ -53,15 +53,37 @@ class Header extends React.Component {
           key: 'buy',
           name: 'buy',
           url: '/buy'
-        },
-
-      ]
+        }
+      ],
+      auth: false,
+      loginFormOpen: false,
+      loginForm: {
+        email: '',
+        password: ''
+      }
     }
   }
+
+  openLoginForm = () => {
+    this.setState({ loginFormOpen: true })
+  }
+
+  close = () => {
+    this.setState({ loginFormOpen: false })
+  }
+
+
   render() {
-    const { menuItem, menuHeader } = this.state
+    const { menuItem, menuHeader, auth, loginFormOpen } = this.state
     return (
-      <HeaderView menuItem={menuItem} menuHeader={menuHeader} />
+      <HeaderView
+        menuItem={menuItem}
+        menuHeader={menuHeader}
+        auth={auth}
+        loginFormOpen={loginFormOpen}
+        openLoginForm={this.openLoginForm}
+        close={this.close}
+      />
     )
   }
 }

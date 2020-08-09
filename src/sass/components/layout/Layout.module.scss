@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.fixed {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+}

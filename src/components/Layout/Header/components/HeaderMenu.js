@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-
+import Button from '../../../Elements/general/Button'
+import ModalLayout from '../../ModalLayout/ModalLayout'
+import FormLogin from '../../../Elements/FormLogin/FormLogin'
 import styles from '../../../../sass/components/elements/HeaderMenu.module.scss'
 import flame from '../../../../assets/images/flame.png'
 
-const HeaderMenu = ({ menuHeader }) => {
+const HeaderMenu = ({ menuHeader, auth, close, loginFormOpen, openLoginForm }) => {
 
   return (
     <div className={styles.container}>
@@ -24,10 +26,20 @@ const HeaderMenu = ({ menuHeader }) => {
             } else {
               return <a href={item.url} key={index}>{item.name}</a>
             }
-
           })}
+          {!auth && (<Button onClick={openLoginForm} >
+            Login
+          </Button>)}
+          {auth && (<Button>
+            Logout
+          </Button>)}
         </div>
       </div>
+      {loginFormOpen && (
+        <ModalLayout close={close}>
+          <FormLogin />
+        </ModalLayout>
+      )}
     </div>
   )
 }
@@ -36,4 +48,8 @@ export default HeaderMenu
 
 HeaderMenu.propTypes = {
   menuHeader: PropTypes.array.isRequired,
+  auth: PropTypes.bool.isRequired,
+  loginFormOpen: PropTypes.bool.isRequired,
+  openLoginForm: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
 };
