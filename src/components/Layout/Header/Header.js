@@ -72,9 +72,21 @@ class Header extends React.Component {
     this.setState({ loginFormOpen: false })
   }
 
+  handleFormLogin = (event) => {
+    this.setState({
+      loginForm: {
+        ...this.state.loginForm,
+        [event.target.name]: event.target.value
+      }
+    })
+  }
+
+  login = () => {
+
+  }
 
   render() {
-    const { menuItem, menuHeader, auth, loginFormOpen } = this.state
+    const { menuItem, menuHeader, auth, loginFormOpen, loginForm } = this.state
     return (
       <HeaderView
         menuItem={menuItem}
@@ -83,6 +95,9 @@ class Header extends React.Component {
         loginFormOpen={loginFormOpen}
         openLoginForm={this.openLoginForm}
         close={this.close}
+        loginForm={loginForm}
+        handleFormLogin={this.handleFormLogin}
+        login={this.login}
       />
     )
   }

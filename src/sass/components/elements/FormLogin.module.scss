@@ -1,3 +1,35 @@
-.container{
+@mixin flexCenter {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container{
+  @include flexCenter;
+  position: relative;
+  height: 100%;
+  h3 {
+  font-family: 'ChelseaMarket-Regular';
+  color: #000;
+  font-size: 30px;
+  margin: 0 0 20px;
+  }
+
+  .inputContainer {
+    @include flexCenter;
+    height: 27%;
+    justify-content: space-between;
+    margin: 25px 0 40px;
+  }
+
+  .boxButton {
+    @include flexCenter;
+    width: 80%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 5%;
+  }
 }

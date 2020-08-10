@@ -4,7 +4,10 @@ import HeaderMenu from './components/HeaderMenu'
 import HeaderNav from './components/HeaderNav'
 import styles from '../../../sass/components/layout/Header.module.scss'
 
-const HeadeView = ({ menuItem, menuHeader, auth, loginFormOpen, openLoginForm, close }) => {
+const HeadeView = ({
+  menuItem, menuHeader, auth,
+  loginFormOpen, openLoginForm,
+  close, loginForm, handleFormLogin, login }) => {
 
   return (
     <div className={styles.Header}>
@@ -14,6 +17,9 @@ const HeadeView = ({ menuItem, menuHeader, auth, loginFormOpen, openLoginForm, c
         loginFormOpen={loginFormOpen}
         openLoginForm={openLoginForm}
         close={close}
+        loginForm={loginForm}
+        handleFormLogin={handleFormLogin}
+        login={login}
       />
       <HeaderNav menuItem={menuItem} />
     </div>
@@ -29,4 +35,7 @@ HeadeView.propTypes = {
   loginFormOpen: PropTypes.bool.isRequired,
   openLoginForm: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
+  loginForm: PropTypes.shape({}).isRequired,
+  handleFormLogin: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
 };

@@ -7,7 +7,9 @@ import FormLogin from '../../../Elements/FormLogin/FormLogin'
 import styles from '../../../../sass/components/elements/HeaderMenu.module.scss'
 import flame from '../../../../assets/images/flame.png'
 
-const HeaderMenu = ({ menuHeader, auth, close, loginFormOpen, openLoginForm }) => {
+const HeaderMenu = ({
+  menuHeader, auth, close, loginFormOpen, openLoginForm,
+  loginForm, handleFormLogin, login }) => {
 
   return (
     <div className={styles.container}>
@@ -37,7 +39,11 @@ const HeaderMenu = ({ menuHeader, auth, close, loginFormOpen, openLoginForm }) =
       </div>
       {loginFormOpen && (
         <ModalLayout close={close}>
-          <FormLogin />
+          <FormLogin
+            loginForm={loginForm}
+            onChange={handleFormLogin}
+            login={login}
+          />
         </ModalLayout>
       )}
     </div>
@@ -52,4 +58,7 @@ HeaderMenu.propTypes = {
   loginFormOpen: PropTypes.bool.isRequired,
   openLoginForm: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
+  loginForm: PropTypes.shape({}).isRequired,
+  handleFormLogin: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
 };

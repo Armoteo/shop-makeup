@@ -44,3 +44,17 @@
     background: #475073;
   }
 }
+
+.btnTransparent {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #313A5A;
+  border: 1px solid transparent;
+  background: transparent;
+  &:hover{
+    border-bottom: 1px solid  #313A5A;
+  }
+}
