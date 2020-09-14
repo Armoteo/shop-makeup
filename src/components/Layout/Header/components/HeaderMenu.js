@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 import Button from '../../../Elements/general/Button'
 import ModalLayout from '../../ModalLayout/ModalLayout'
 import FormLogin from '../../../Elements/FormLogin/FormLogin'
+import FormRegister from '../../../Elements/FormRegister/FormRegister'
 import styles from '../../../../sass/components/elements/HeaderMenu.module.scss'
 import flame from '../../../../assets/images/flame.png'
 
 const HeaderMenu = ({
   menuHeader, auth, close, loginFormOpen, openLoginForm,
-  loginForm, handleFormLogin, login }) => {
+  loginForm, handleFormLogin, login, signUpFormOpen, errorMessage,
+  handleFormSignUp, signUpForm, signUp, openSignUpForm
+}) => {
 
   return (
     <div className={styles.container}>
@@ -43,6 +46,19 @@ const HeaderMenu = ({
             loginForm={loginForm}
             onChange={handleFormLogin}
             login={login}
+            errorMessage={errorMessage}
+            openSignUpForm={openSignUpForm}
+          />
+        </ModalLayout>
+      )}
+      {signUpFormOpen && (
+        <ModalLayout close={close}>
+          <FormRegister
+            signUpForm={signUpForm}
+            signUp={signUp}
+            onChange={handleFormSignUp}
+            errorMessage={errorMessage}
+            loginOpen={openLoginForm}
           />
         </ModalLayout>
       )}
@@ -56,9 +72,15 @@ HeaderMenu.propTypes = {
   menuHeader: PropTypes.array.isRequired,
   auth: PropTypes.bool.isRequired,
   loginFormOpen: PropTypes.bool.isRequired,
+  signUpFormOpen: PropTypes.bool.isRequired,
   openLoginForm: PropTypes.func.isRequired,
+  handleFormSignUp: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   loginForm: PropTypes.shape({}).isRequired,
+  errorMessage: PropTypes.shape({}).isRequired,
+  signUpForm: PropTypes.shape({}).isRequired,
   handleFormLogin: PropTypes.func.isRequired,
+  signUp: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
+  openSignUpForm: PropTypes.func.isRequired,
 };

@@ -2,16 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Input from '../general/Input'
 import Button from '../general/Button'
-import styles from '../../../sass/components/elements/FormLogin.module.scss'
+import styles from '../../../sass/components/elements/FormRegister.module.scss'
 
-const FormLogin = ({ loginForm, onChange, login, errorMessage, openSignUpForm }) => {
-
+const FormRegister = ({ signUpForm, signUp, onChange, loginOpen, errorMessage }) => {
   return (
     <div className={styles.container}>
-      <h3>Login</h3>
+      <h3>Register</h3>
       <div className={styles.inputContainer}>
         <Input
-          value={loginForm.email}
+          value={signUpForm.email}
           name="email"
           onChange={onChange}
           placeholder="Email"
@@ -23,7 +22,7 @@ const FormLogin = ({ loginForm, onChange, login, errorMessage, openSignUpForm })
           {errorMessage.login}
         </span>
         <Input
-          value={loginForm.password}
+          value={signUpForm.password}
           name="password"
           onChange={onChange}
           placeholder="Password"
@@ -34,37 +33,43 @@ const FormLogin = ({ loginForm, onChange, login, errorMessage, openSignUpForm })
         >
           {errorMessage.password}
         </span>
+        <Input
+          value={signUpForm.repeatPassword}
+          name="repeatPassword"
+          onChange={onChange}
+          placeholder="Repeat Password"
+          type="password"
+        />
+        <span
+          className={errorMessage.repeatPassword ? styles.error : styles.hide}
+        >
+          {errorMessage.repeatPassword}
+        </span>
       </div>
       <Button
-        onClick={login}
+        onClick={signUp}
         styleButton="submit"
       >
         Submit
       </Button>
       <div className={styles.boxButton}>
         <Button
-          onClick={openSignUpForm}
+          onClick={loginOpen}
           styleButton="btnTransparent"
         >
-          Registration
-      </Button>
-        <Button
-          onClick={login}
-          styleButton="btnTransparent"
-        >
-          Forgot password
+          Login
       </Button>
       </div>
     </div>
   )
 }
 
-FormLogin.propTypes = {
-  loginForm: PropTypes.shape({}).isRequired,
+FormRegister.propTypes = {
+  signUpForm: PropTypes.shape({}).isRequired,
   errorMessage: PropTypes.shape({}).isRequired,
   onChange: PropTypes.func.isRequired,
-  login: PropTypes.func.isRequired,
-  openSignUpForm: PropTypes.func.isRequired
+  signUp: PropTypes.func.isRequired,
+  loginOpen: PropTypes.func.isRequired,
 };
 
-export default FormLogin
+export default FormRegister

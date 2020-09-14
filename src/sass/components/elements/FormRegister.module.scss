@@ -17,7 +17,7 @@
 
   .inputContainer {
     @include flexCenter;
-    height: 27%;
+    height: 40%;
     justify-content: space-between;
     margin: 25px 0 40px;
   }
@@ -25,7 +25,7 @@
   .boxButton {
     @include flexCenter;
     width: 80%;
-    height: 15%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;

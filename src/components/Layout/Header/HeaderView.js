@@ -6,8 +6,11 @@ import styles from '../../../sass/components/layout/Header.module.scss'
 
 const HeadeView = ({
   menuItem, menuHeader, auth,
-  loginFormOpen, openLoginForm,
-  close, loginForm, handleFormLogin, login }) => {
+  loginFormOpen, openLoginForm, errorMessage,
+  close, loginForm, handleFormLogin, login,
+  signUpForm, signUp, handleFormSignUp, openSignUpForm,
+  signUpFormOpen
+}) => {
 
   return (
     <div className={styles.Header}>
@@ -20,6 +23,12 @@ const HeadeView = ({
         loginForm={loginForm}
         handleFormLogin={handleFormLogin}
         login={login}
+        errorMessage={errorMessage}
+        signUpForm={signUpForm}
+        signUp={signUp}
+        handleFormSignUp={handleFormSignUp}
+        openSignUpForm={openSignUpForm}
+        signUpFormOpen={signUpFormOpen}
       />
       <HeaderNav menuItem={menuItem} />
     </div>
@@ -33,9 +42,15 @@ HeadeView.propTypes = {
   menuHeader: PropTypes.array.isRequired,
   auth: PropTypes.bool.isRequired,
   loginFormOpen: PropTypes.bool.isRequired,
+  signUpFormOpen: PropTypes.bool.isRequired,
   openLoginForm: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   loginForm: PropTypes.shape({}).isRequired,
+  signUpForm: PropTypes.shape({}).isRequired,
+  errorMessage: PropTypes.shape({}).isRequired,
   handleFormLogin: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
+  signUp: PropTypes.func.isRequired,
+  handleFormSignUp: PropTypes.func.isRequired,
+  openSignUpForm: PropTypes.func.isRequired,
 };
