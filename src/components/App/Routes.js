@@ -20,6 +20,7 @@ export const routes = [
     path: ROUTES_URLS.ADMIN_PAGE,
     exact: true,
     render: () => <AdminPage />,
-    title: 'admin'
+    title: 'admin',
+    isProtected: true
   },
 ]

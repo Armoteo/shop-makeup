@@ -11,7 +11,7 @@ import flame from '../../../../assets/images/flame.png'
 const HeaderMenu = ({
   menuHeader, auth, close, loginFormOpen, openLoginForm,
   loginForm, handleFormLogin, login, signUpFormOpen, errorMessage,
-  handleFormSignUp, signUpForm, signUp, openSignUpForm
+  handleFormSignUp, signUpForm, signUp, openSignUpForm, logout
 }) => {
 
   return (
@@ -35,7 +35,7 @@ const HeaderMenu = ({
           {!auth && (<Button onClick={openLoginForm} >
             Login
           </Button>)}
-          {auth && (<Button>
+          {auth && (<Button onClick={logout}>
             Logout
           </Button>)}
         </div>
@@ -83,4 +83,5 @@ HeaderMenu.propTypes = {
   signUp: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
   openSignUpForm: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
 };

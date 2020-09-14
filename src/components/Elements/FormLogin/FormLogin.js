@@ -18,9 +18,9 @@ const FormLogin = ({ loginForm, onChange, login, errorMessage, openSignUpForm })
           type="email"
         />
         <span
-          className={errorMessage.login ? styles.error : styles.hide}
+          className={errorMessage.email ? styles.error : styles.hide}
         >
-          {errorMessage.login}
+          {errorMessage.email}
         </span>
         <Input
           value={loginForm.password}

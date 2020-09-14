@@ -9,7 +9,7 @@ const HeadeView = ({
   loginFormOpen, openLoginForm, errorMessage,
   close, loginForm, handleFormLogin, login,
   signUpForm, signUp, handleFormSignUp, openSignUpForm,
-  signUpFormOpen
+  signUpFormOpen, logout
 }) => {
 
   return (
@@ -29,6 +29,7 @@ const HeadeView = ({
         handleFormSignUp={handleFormSignUp}
         openSignUpForm={openSignUpForm}
         signUpFormOpen={signUpFormOpen}
+        logout={logout}
       />
       <HeaderNav menuItem={menuItem} />
     </div>
@@ -53,4 +54,5 @@ HeadeView.propTypes = {
   signUp: PropTypes.func.isRequired,
   handleFormSignUp: PropTypes.func.isRequired,
   openSignUpForm: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
 };

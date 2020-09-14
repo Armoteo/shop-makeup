@@ -17,9 +17,9 @@ const FormRegister = ({ signUpForm, signUp, onChange, loginOpen, errorMessage })
           type="email"
         />
         <span
-          className={errorMessage.login ? styles.error : styles.hide}
+          className={errorMessage.email ? styles.error : styles.hide}
         >
-          {errorMessage.login}
+          {errorMessage.email}
         </span>
         <Input
           value={signUpForm.password}
