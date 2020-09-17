@@ -11,15 +11,18 @@ import flame from '../../../../assets/images/flame.png'
 const HeaderMenu = ({
   menuHeader, auth, close, loginFormOpen, openLoginForm,
   loginForm, handleFormLogin, login, signUpFormOpen, errorMessage,
-  handleFormSignUp, signUpForm, signUp, openSignUpForm, logout
+  handleFormSignUp, signUpForm, signUp, openSignUpForm, logout,
+  adminStatus
 }) => {
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapperContent}>
         <div className={styles.logo}>
-          <img src={flame} alt="flame" />
-          <span>Bonfire</span>
+          <Link to="/">
+            <img src={flame} alt="flame" />
+            <span>Bonfire</span>
+          </Link>
         </div>
         <div className={styles.menu}>
           {menuHeader.map((item, index) => {
@@ -28,8 +31,10 @@ const HeaderMenu = ({
                 to={item.url}
                 key={index}
               >{item.name}<i className="fas fa-shopping-cart"></i></Link>
+            } else if (item.name === 'admin') {
+              return adminStatus && <Link to={item.url} key={index}>{item.name}</Link>
             } else {
-              return <a href={item.url} key={index}>{item.name}</a>
+              return <Link to={item.url} key={index}>{item.name}</Link>
             }
           })}
           {!auth && (<Button onClick={openLoginForm} >
@@ -68,6 +73,11 @@ const HeaderMenu = ({
 
 export default HeaderMenu
 
+HeaderMenu.defaultProps = {
+  adminStatus: false,
+}
+
+
 HeaderMenu.propTypes = {
   menuHeader: PropTypes.array.isRequired,
   auth: PropTypes.bool.isRequired,
@@ -84,4 +94,5 @@ HeaderMenu.propTypes = {
   login: PropTypes.func.isRequired,
   openSignUpForm: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
+  adminStatus: PropTypes.bool,
 };

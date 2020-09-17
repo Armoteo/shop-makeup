@@ -33,6 +33,11 @@ export const menuItem = [
 
 export const menuHeader = [
   {
+    key: 'admin',
+    name: 'admin',
+    url: '/admin'
+  },
+  {
     key: 'whish',
     name: 'whish list',
     url: '/whish'

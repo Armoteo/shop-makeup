@@ -17,16 +17,23 @@
     width: 30px;
     height: 40px;
   }
-  span {
+  a {
+   text-decoration: none;
+   color: black;
+   display: flex;
+   align-items: center;
+  }
+  span{
     font-family: 'ChelseaMarket-Regular';
     margin: 0 10px;
+    padding-top: 5px;
   }
 }
 
 .menu {
-  width: 45%;
+  width: 48%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items:center;
   a {
     text-decoration: none;

@@ -6,7 +6,7 @@ import { useAuth } from '../../hooks/auth.hook'
 import { useHttp } from '../../hooks/http.hook'
 
 const Header = () => {
-  const { login, logout, token } = useAuth();
+  const { login, logout, token, adminStatus } = useAuth()
   const { request } = useHttp();
   const [auth, setAuth] = useState(false)
   const [loginFormOpen, setLoginFormOpen] = useState(false)
@@ -81,8 +81,6 @@ const Header = () => {
     setSignUpForm({ ...signUpForm, [event.target.name]: event.target.value })
   }
 
-
-
   const loginSubmit = async () => {
     const schema = schemaModel('login')
     const resultValid = await submit(schema, loginForm)
@@ -92,7 +90,7 @@ const Header = () => {
         'POST',
         { ...loginForm }
       );
-      login(data.token, data.userId)
+      login(data.token, data.userId, data.adminStatus)
       close()
       clearForm()
     }
@@ -135,6 +133,7 @@ const Header = () => {
       openSignUpForm={openSignUpForm}
       signUpFormOpen={signUpFormOpen}
       logout={logout}
+      adminStatus={adminStatus}
     />
   )
 
