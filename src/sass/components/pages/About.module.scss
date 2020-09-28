@@ -1,0 +1,20 @@
+@import '../../../sass/mixin.scss';
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  h3{
+    font-family: 'Terminal Dosis-Book';
+    font-size: 25px;
+  }
+  span {
+    font-family: 'Terminal Dosis-Book';
+    font-size: 18px;
+  }
+  .wrapper{
+    @include wrapper();
+    flex-direction: column;
+  }
+}

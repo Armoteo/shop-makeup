@@ -5,24 +5,24 @@ export const menuItem = [
     url: '/'
   },
   {
-    key: 'laptops',
-    name: 'Laptops & Notebooks',
-    url: '/laptops'
+    key: 'makeup',
+    name: 'Makeup',
+    url: '/makeup'
   },
   {
-    key: 'components',
-    name: 'Components',
-    url: '/components'
+    key: 'eyelashes',
+    name: 'Eyelashes',
+    url: '/eyelashes'
   },
   {
-    key: 'tablets',
-    name: 'Tablets',
-    url: '/tablets'
+    key: 'hair',
+    name: 'Hair',
+    url: '/hair'
   },
   {
-    key: 'software',
-    name: 'Software',
-    url: '/software'
+    key: 'aboutUs',
+    name: 'About Us',
+    url: '/aboutUs'
   },
   {
     key: 'contact',
