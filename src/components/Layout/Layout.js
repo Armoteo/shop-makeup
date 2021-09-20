@@ -7,9 +7,11 @@ import styles from "../../sass/components/layout/Layout.module.scss";
 
 const Layout = ({ children: page }) => {
   return (
-    <div className={styles.container} id="modal">
+    <div className={styles.layout} id="modal">
       <Header />
-      {page}
+      <div className={styles.main}>
+        <div className={styles.content}>{page}</div>
+      </div>
       <Footer />
     </div>
   );

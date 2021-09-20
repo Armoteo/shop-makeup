@@ -1,12 +1,14 @@
-.container {
-  position: relative;
+.layout {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
-}
-
-.fixed {
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
+  position: relative;
+  .main {
+    display: flex;
+    flex: 1;
+    .content {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
 }
