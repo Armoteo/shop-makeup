@@ -1,39 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import { menuItem, menuHeader } from './components/HeaderMenuData'
-import HeaderView from './HeaderView'
-import { submit, schemaModel } from '../../../utils/validation'
-import { useAuth } from '../../hooks/auth.hook'
-import { useHttp } from '../../hooks/http.hook'
+import React, { useState } from "react";
+import { menuItem, menuHeader } from "./components/HeaderMenuData";
+import HeaderView from "./HeaderView";
+import { submit, schemaModel } from "../../../utils/validation";
 
 const Header = () => {
-  const { login, logout, token, adminStatus } = useAuth()
-  const { request } = useHttp();
-  const [auth, setAuth] = useState(false)
-  const [loginFormOpen, setLoginFormOpen] = useState(false)
-  const [signUpFormOpen, setSignUpFormOpen] = useState(false)
+  // const [auth, setAuth] = useState(false);
+  const [loginFormOpen, setLoginFormOpen] = useState(false);
+  const [signUpFormOpen, setSignUpFormOpen] = useState(false);
   const [loginForm, setLoginForm] = useState({
-    email: '',
-    password: ''
-  })
+    email: "",
+    password: "",
+  });
   const [signUpForm, setSignUpForm] = useState({
-    email: '',
-    password: '',
-    repeatPassword: ''
-  })
+    email: "",
+    password: "",
+    repeatPassword: "",
+  });
 
   const [errorMessage, setErrorMessage] = useState({
-    email: '',
-    password: '',
-    repeatPassword: ''
-  })
+    email: "",
+    password: "",
+    repeatPassword: "",
+  });
 
-  useEffect(() => {
-    token ? setAuth(true) : setAuth(false)
-  }, [token])
+  // useEffect(() => {
+  //   if (token) {
+  //     setAuth(true);
+  //   } else {
+  //     setAuth(false);
+  //   }
+  // }, [token]);
 
   const getEmptyFormData = (formData) => {
     const emptyData = {};
-    Object.keys(formData).forEach((key) => { emptyData[key] = ''; });
+    Object.keys(formData).forEach((key) => {
+      emptyData[key] = "";
+    });
     return emptyData;
   };
 
@@ -42,9 +44,9 @@ const Header = () => {
   };
 
   const clearForm = () => {
-    setLoginForm(getEmptyFormData(loginForm))
-    setSignUpForm(getEmptyFormData(signUpForm))
-  }
+    setLoginForm(getEmptyFormData(loginForm));
+    setSignUpForm(getEmptyFormData(signUpForm));
+  };
 
   const handleError = (results) => {
     if (results !== true) {
@@ -57,69 +59,58 @@ const Header = () => {
   };
 
   const close = () => {
-    clearForm()
-    clearErrorMesage()
-    setLoginFormOpen(false)
-    setSignUpFormOpen(false)
-  }
+    clearForm();
+    clearErrorMesage();
+    setLoginFormOpen(false);
+    setSignUpFormOpen(false);
+  };
 
   const openLoginForm = () => {
-    close()
-    setLoginFormOpen(true)
-  }
+    close();
+    setLoginFormOpen(true);
+  };
 
   const openSignUpForm = () => {
-    close()
-    setSignUpFormOpen(true)
-  }
+    close();
+    setSignUpFormOpen(true);
+  };
 
   const handleFormLogin = (event) => {
-    setLoginForm({ ...loginForm, [event.target.name]: event.target.value })
-  }
+    setLoginForm({ ...loginForm, [event.target.name]: event.target.value });
+  };
 
   const handleFormSignUp = (event) => {
-    setSignUpForm({ ...signUpForm, [event.target.name]: event.target.value })
-  }
+    setSignUpForm({ ...signUpForm, [event.target.name]: event.target.value });
+  };
 
   const loginSubmit = async () => {
-    const schema = schemaModel('login')
-    const resultValid = await submit(schema, loginForm)
+    const schema = schemaModel("login");
+    const resultValid = await submit(schema, loginForm);
     if (resultValid.message === undefined) {
-      const data = await request(
-        'http://localhost:5000/api/auth/login',
-        'POST',
-        { ...loginForm }
-      );
-      login(data.token, data.userId, data.adminStatus)
-      close()
-      clearForm()
+      close();
+      clearForm();
     }
     handleError(resultValid);
-  }
+  };
 
   const signUp = async () => {
-    const schema = schemaModel('signUp')
-    const resultValid = await submit(schema, signUpForm)
-    const form = signUpForm
-    delete form.repeatPassword
+    const schema = schemaModel("signUp");
+    const resultValid = await submit(schema, signUpForm);
+    const form = signUpForm;
+    delete form.repeatPassword;
 
     if (resultValid.message === undefined) {
-      await request(
-        'http://localhost:5000/api/auth/register',
-        'POST',
-        { ...form }
-      )
-      close()
-      clearForm()
+      close();
+      clearForm();
     }
     handleError(resultValid);
-  }
+  };
 
   return (
     <HeaderView
       menuItem={menuItem}
       menuHeader={menuHeader}
-      auth={auth}
+      // auth={auth}
       loginFormOpen={loginFormOpen}
       openLoginForm={openLoginForm}
       close={close}
@@ -132,11 +123,8 @@ const Header = () => {
       handleFormSignUp={handleFormSignUp}
       openSignUpForm={openSignUpForm}
       signUpFormOpen={signUpFormOpen}
-      logout={logout}
-      adminStatus={adminStatus}
     />
-  )
+  );
+};
 
-}
-
-export default Header
+export default Header;

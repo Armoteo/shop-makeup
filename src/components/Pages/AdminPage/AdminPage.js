@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import AdminPageView from './AdminPageView'
-import Layout from '../../Layout/Layout'
+import AdminPageView from "./AdminPageView";
+import Layout from "../../Layout/Layout";
 
 class AdminPage extends React.Component {
   render() {
@@ -9,8 +9,8 @@ class AdminPage extends React.Component {
       <Layout>
         <AdminPageView />
       </Layout>
-    )
+    );
   }
 }
 
-export default AdminPage
+export default AdminPage;

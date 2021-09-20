@@ -1,7 +1,7 @@
-import React from 'react';
-import Layout from '../../Layout/Layout'
+import React from "react";
+import Layout from "../../Layout/Layout";
 
-import styles from '../../../sass/components/pages/NotFound.module.scss'
+import styles from "../../../sass/components/pages/NotFound.module.scss";
 
 const NotFound = () => (
   <Layout>

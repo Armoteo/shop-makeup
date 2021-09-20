@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import styles from '../../../../sass/components/elements/FooterInfo.module.scss'
+import styles from "../../../../sass/components/elements/FooterInfo.module.scss";
 
 const FooterInfo = () => {
   return (
@@ -9,30 +9,27 @@ const FooterInfo = () => {
         <div>
           <h3>Suspendisse Sed</h3>
           <span>
-            Lectus magna fringilla urna porttitor rhoncus dolor purus non.
-            Semper viverra nam libero justo laoreet sit. Dolor purus non enim
-            praesent elementum facilisis leo vel.
+            Lectus magna fringilla urna porttitor rhoncus dolor purus non. Semper viverra nam libero justo laoreet sit.
+            Dolor purus non enim praesent elementum facilisis leo vel.
           </span>
         </div>
         <div>
           <h3>Suspendisse Sed</h3>
           <span>
-            Lectus magna fringilla urna porttitor rhoncus dolor purus non.
-            Semper viverra nam libero justo laoreet sit. Dolor purus non enim
-            praesent elementum facilisis leo vel.
+            Lectus magna fringilla urna porttitor rhoncus dolor purus non. Semper viverra nam libero justo laoreet sit.
+            Dolor purus non enim praesent elementum facilisis leo vel.
           </span>
         </div>
         <div>
           <h3>Suspendisse Sed</h3>
           <span>
-            Lectus magna fringilla urna porttitor rhoncus dolor purus non.
-            Semper viverra nam libero justo laoreet sit. Dolor purus non enim
-            praesent elementum facilisis leo vel.
+            Lectus magna fringilla urna porttitor rhoncus dolor purus non. Semper viverra nam libero justo laoreet sit.
+            Dolor purus non enim praesent elementum facilisis leo vel.
           </span>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FooterInfo
+export default FooterInfo;

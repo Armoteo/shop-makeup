@@ -1,17 +1,28 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import HeaderMenu from './components/HeaderMenu'
-import HeaderNav from './components/HeaderNav'
-import styles from '../../../sass/components/layout/Header.module.scss'
+import React from "react";
+import PropTypes from "prop-types";
+import HeaderMenu from "./components/HeaderMenu";
+import HeaderNav from "./components/HeaderNav";
+import styles from "../../../sass/components/layout/Header.module.scss";
 
-const HeadeView = ({
-  menuItem, menuHeader, auth,
-  loginFormOpen, openLoginForm, errorMessage,
-  close, loginForm, handleFormLogin, login,
-  signUpForm, signUp, handleFormSignUp, openSignUpForm,
-  signUpFormOpen, logout, adminStatus
+const HeaderView = ({
+  menuItem,
+  menuHeader,
+  auth,
+  loginFormOpen,
+  openLoginForm,
+  errorMessage,
+  close,
+  loginForm,
+  handleFormLogin,
+  login,
+  signUpForm,
+  signUp,
+  handleFormSignUp,
+  openSignUpForm,
+  signUpFormOpen,
+  logout,
+  adminStatus,
 }) => {
-
   return (
     <div className={styles.Header}>
       <HeaderMenu
@@ -34,18 +45,18 @@ const HeadeView = ({
       />
       <HeaderNav menuItem={menuItem} />
     </div>
-  )
-}
+  );
+};
 
-export default HeadeView
+export default HeaderView;
 
-HeadeView.defaultProps = {
+HeaderView.defaultProps = {
   adminStatus: false,
-}
+};
 
-HeadeView.propTypes = {
-  menuItem: PropTypes.array.isRequired,
-  menuHeader: PropTypes.array.isRequired,
+HeaderView.propTypes = {
+  menuItem: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  menuHeader: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   auth: PropTypes.bool.isRequired,
   loginFormOpen: PropTypes.bool.isRequired,
   signUpFormOpen: PropTypes.bool.isRequired,

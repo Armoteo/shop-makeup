@@ -1,11 +1,24 @@
-import React from 'react';
-import { Switch, Route } from 'react-router';
-import { useAuth } from '../hooks/auth.hook';
-import NotFound from '../Pages/NotFound/NotFound';
-import { routes } from './Routes'
+import React from "react";
+import { Switch, Route } from "react-router";
+import NotFound from "../Pages/NotFound/NotFound";
+import { routes } from "./Routes";
 
 function App() {
-  const { token } = useAuth()
+  const renderRoute = (route, index) => (
+    <Route exact={route.exact} key={index} path={route.path} render={(props) => route.render({ ...props })} />
+  );
+
+  const defendRouter = (routesComponent) => {
+    return routesComponent.filter((el) => el.isProtected !== true);
+  };
+
+  const arrayRoute = () => {
+    // if (token) {
+    //   return routes.map(renderRoute);
+    // }
+    const newRoutes = defendRouter(routes);
+    return newRoutes.map(renderRoute);
+  };
 
   const renderPage = () => (
     <main>
@@ -14,36 +27,9 @@ function App() {
         <Route path="*" render={() => <NotFound />} />
       </Switch>
     </main>
-  )
-
-  const arrayRoute = () => {
-    if (token) {
-      return routes.map(renderRoute)
-    } else {
-      let newRoutes = defendRouter(routes)
-      return newRoutes.map(renderRoute)
-    }
-  }
-
-  const defendRouter = (routes) => {
-    return routes.filter(el => el.isProtected !== true)
-  }
-
-  const renderRoute = (route, index) => (
-    <Route
-      exact={route.exact}
-      key={index}
-      path={route.path}
-      render={(props) => route.render({ ...props })}
-    />
-  )
-
-
-  return (
-    <div>
-      {renderPage()}
-    </div>
   );
+
+  return <div>{renderPage()}</div>;
 }
 
 export default App;

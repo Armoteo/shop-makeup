@@ -1,43 +1,31 @@
-import * as yup from 'yup';
+import * as yup from "yup";
 
 const schemaLogin = yup.object().shape({
-  email: yup.string()
-    .required('Email is required')
-    .email('Invalid email address'),
-  password: yup.string()
-    .required('Password is required')
-    .min(8, 'Too short password')
+  email: yup.string().required("Email is required").email("Invalid email address"),
+  password: yup.string().required("Password is required").min(8, "Too short password"),
 });
 
 const schemaSignUp = yup.object().shape({
-  email: yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
-  password: yup.string()
-    .min(8, 'Too short repeat password')
-    .required('Required'),
-  repeatPassword: yup.string()
-    .min(8, 'Too short repeat password')
-    .required('Required'),
+  email: yup.string().email("Invalid email address").required("Email is required"),
+  password: yup.string().min(8, "Too short repeat password").required("Required"),
+  repeatPassword: yup.string().min(8, "Too short repeat password").required("Required"),
 });
 
 const schemaForgotPassword = yup.object().shape({
-  email: yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
+  email: yup.string().email("Invalid email address").required("Email is required"),
 });
 
 export const schemaModel = (typeSubmit) => {
   switch (typeSubmit) {
-    case 'login':
+    case "login":
       return schemaLogin;
-    case 'signUp':
+    case "signUp":
       return schemaSignUp;
-    case 'forgotPassword':
+    case "forgotPassword":
       return schemaForgotPassword;
 
     default:
-      return '';
+      return "";
   }
 };
 

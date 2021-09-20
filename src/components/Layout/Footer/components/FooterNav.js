@@ -1,6 +1,6 @@
-import React from 'react'
-import styles from '../../../../sass/components/elements/FooterNav.module.scss'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "../../../../sass/components/elements/FooterNav.module.scss";
 
 const FooterNav = () => {
   return (
@@ -9,9 +9,8 @@ const FooterNav = () => {
         <div className={styles.about}>
           <h3>About Us</h3>
           <span>
-            Lectus magna fringilla urna porttitor rhoncus dolor purus non.
-            Semper viverra nam libero justo laoreet sit. Dolor purus non enim
-            praesent elementum facilisis leo vel.
+            Lectus magna fringilla urna porttitor rhoncus dolor purus non. Semper viverra nam libero justo laoreet sit.
+            Dolor purus non enim praesent elementum facilisis leo vel.
           </span>
         </div>
         <div className={styles.information}>
@@ -34,7 +33,7 @@ const FooterNav = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FooterNav
+export default FooterNav;

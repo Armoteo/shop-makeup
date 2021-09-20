@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styles from '../../../sass/components/general/Input.module.scss'
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "../../../sass/components/general/Input.module.scss";
 
 const Input = ({ name, onChange, value, placeholder, type }) => {
   return (
@@ -12,14 +12,23 @@ const Input = ({ name, onChange, value, placeholder, type }) => {
       value={value}
       placeholder={placeholder}
     />
-  )
-}
-
-Input.propTypes = {
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  );
 };
 
-export default Input
+Input.defaultProps = {
+  value: "",
+  name: "",
+  placeholder: "",
+  type: "",
+  onChange: () => {},
+};
+
+Input.propTypes = {
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+};
+
+export default Input;

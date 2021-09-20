@@ -1,13 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from '../../../sass/components/general/CloseButton.module.scss'
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "../../../sass/components/general/CloseButton.module.scss";
 
 const CloseButton = ({ click }) => {
   return (
     <button type="button" onClick={click} className={styles.btnClose}>
-      <span
-        className={styles.close}
-      />
+      <span className={styles.close} />
     </button>
   );
 };

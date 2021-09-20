@@ -1,23 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-import styles from '../../../sass/components/general/Button.module.scss'
+import styles from "../../../sass/components/general/Button.module.scss";
 
 const Button = ({ children, onClick, styleButton }) => {
   return (
-    <button
-      className={`${styles.btn} ${styles[styleButton]}`}
-      onClick={onClick}
-    >
+    <button className={`${styles.btn} ${styles[styleButton]}`} onClick={onClick} type="button">
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
 
 Button.defaultProps = {
-  styleButton: 'login',
+  styleButton: "login",
 };
 
 Button.propTypes = {

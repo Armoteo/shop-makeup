@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Header from './Header/Header'
-import Footer from './Footer/Footer'
+import React from "react";
+import PropTypes from "prop-types";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
-import styles from '../../sass/components/layout/Layout.module.scss'
+import styles from "../../sass/components/layout/Layout.module.scss";
 
 const Layout = ({ children: page }) => {
   return (
@@ -12,11 +12,11 @@ const Layout = ({ children: page }) => {
       {page}
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };
