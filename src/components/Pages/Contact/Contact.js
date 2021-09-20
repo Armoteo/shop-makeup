@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ContactView from "./ContactView";
-import Layout from "../../Layout/Layout";
 
 const Contact = () => {
   const [formContact, setFormContact] = useState({
@@ -25,11 +24,7 @@ const Contact = () => {
     setFormContact(getEmptyFormData(formContact));
   };
 
-  return (
-    <Layout>
-      <ContactView formContact={formContact} requestSubmit={requestSubmit} onChangeHandler={onChangeHandler} />
-    </Layout>
-  );
+  return <ContactView formContact={formContact} requestSubmit={requestSubmit} onChangeHandler={onChangeHandler} />;
 };
 
 export default Contact;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router";
+import Layout from "../Layout/Layout";
 import NotFound from "../Pages/NotFound/NotFound";
 import { routes } from "./Routes";
 
@@ -22,10 +23,12 @@ function App() {
 
   const renderPage = () => (
     <main>
-      <Switch>
-        {arrayRoute()}
-        <Route path="*" render={() => <NotFound />} />
-      </Switch>
+      <Layout>
+        <Switch>
+          {arrayRoute()}
+          <Route path="*" render={() => <NotFound />} />
+        </Switch>
+      </Layout>
     </main>
   );
 
