@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "../../../sass/components/general/Input.module.scss";
 
-const Input = ({ name, onChange, value, placeholder, type }) => {
+const Input = ({ name, onChange, value, placeholder, type, autoComplete = "off" }) => {
   return (
     <input
       className={styles.input}
@@ -11,6 +11,7 @@ const Input = ({ name, onChange, value, placeholder, type }) => {
       onChange={onChange}
       value={value}
       placeholder={placeholder}
+      autoComplete={autoComplete}
     />
   );
 };
@@ -29,6 +30,7 @@ Input.propTypes = {
   type: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string,
+  autoComplete: PropTypes.string.isRequired,
 };
 
 export default Input;
