@@ -52,12 +52,14 @@ export default HeaderView;
 
 HeaderView.defaultProps = {
   adminStatus: false,
+  logout: () => {},
+  auth: false,
 };
 
 HeaderView.propTypes = {
   menuItem: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   menuHeader: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  auth: PropTypes.bool.isRequired,
+  auth: PropTypes.bool,
   loginFormOpen: PropTypes.bool.isRequired,
   signUpFormOpen: PropTypes.bool.isRequired,
   openLoginForm: PropTypes.func.isRequired,
@@ -70,6 +72,6 @@ HeaderView.propTypes = {
   signUp: PropTypes.func.isRequired,
   handleFormSignUp: PropTypes.func.isRequired,
   openSignUpForm: PropTypes.func.isRequired,
-  logout: PropTypes.func.isRequired,
+  logout: PropTypes.func,
   adminStatus: PropTypes.bool,
 };

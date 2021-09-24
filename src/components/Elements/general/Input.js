@@ -22,6 +22,7 @@ Input.defaultProps = {
   placeholder: "",
   type: "",
   onChange: () => {},
+  autoComplete: "off",
 };
 
 Input.propTypes = {
@@ -30,7 +31,7 @@ Input.propTypes = {
   type: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string,
-  autoComplete: PropTypes.string.isRequired,
+  autoComplete: PropTypes.string,
 };
 
 export default Input;
